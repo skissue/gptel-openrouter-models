@@ -1,0 +1,23 @@
+name: Update OpenRouter models
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-models:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch latest models
+        run: curl -sf https://openrouter.ai/api/v1/models | jq -c '.data | sort_by(.id)' > openrouter-models.json
+
+      - uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: "bump: update OpenRouter models list"
+          file_pattern: openrouter-models.json

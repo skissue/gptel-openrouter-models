@@ -109,7 +109,7 @@ Includes all models available on OpenRouter, with metadata and
 capabilities specified.  Reads from a bundled `openrouter-models.json'."
   (let ((data (with-temp-buffer
                 (insert-file-contents gptel-openrouter-models--file)
-                (gethash "data" (json-parse-buffer :array-type 'list)))))
+                (json-parse-buffer :array-type 'list))))
     (mapcar #'gptel-openrouter-models--parse-model data)))
 
 (provide 'gptel-openrouter-models)

@@ -103,6 +103,7 @@
       (setq plist (plist-put plist :mime-types mime-types)))
     (cons id plist)))
 
+;;;###autoload
 (defun gptel-openrouter-models ()
   "Return a list suitable for passing to `:models' of `gptel-make-openai'.
 Includes all models available on OpenRouter, with metadata and

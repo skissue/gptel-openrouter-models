@@ -2,7 +2,7 @@
 
 ;; Author: Ad <me@skissue.xyz>
 ;; Maintainer: Ad <me@skissue.xyz>
-;; Version: 0.0.1
+;; Version: 1.0.0
 ;; Package-Requires: ((emacs "27.1"))
 ;; Homepage: https://github.com/skissue/gptel-openrouter-models
 ;; Keywords: tools
